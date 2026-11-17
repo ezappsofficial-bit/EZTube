@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EZTube - Ad-Free Video Player & Offline Media Manager</title>
+    <meta name="description" content="Watch ad-free videos, enjoy background & floating playback, and save 4K videos or MP3 audio tracks offline with EZTube for Android." />
+  <meta property="og:title" content="EZTube - Ad-Free Video Player & Offline Media Manager" />
+  <meta property="og:description" content="Uninterrupted ad-free video streaming, background playback, and one-tap 4K video & MP3 downloads for Android." />
+  <meta property="og:image" content="https://ezappsofficial-bit.github.io/EZTube/feature_graphic_1024x500.jpg" />
+  <meta property="og:url" content="https://ezappsofficial-bit.github.io/EZTube/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" href="logo.png" />
   <style>
     :root {
@@ -110,6 +116,18 @@
       .hero h1 { font-size: 2.15rem; }
       .nav-links a:not(.nav-btn) { display: none; }
     }
+      .qr-box { display: inline-flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--border); padding: 10px 14px; border-radius: 14px; margin-top: 16px; }
+    .qr-box img { width: 60px; height: 60px; border-radius: 8px; background: #fff; padding: 3px; }
+    .qr-text strong { display: block; font-size: 0.88rem; color: var(--text); }
+    .qr-text span { font-size: 0.8rem; color: var(--muted); }
+    .support-box { background: linear-gradient(135deg, #171b26 0%, #1e1620 100%); border: 1px solid rgba(255,30,39,0.35); border-radius: 18px; padding: 26px 30px; margin: 25px 0 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .support-box h3 { font-size: 1.2rem; margin-bottom: 4px; }
+    .support-box p { color: var(--muted); font-size: 0.92rem; }
+    .mobile-sticky { display: none; position: fixed; bottom: 0; inset-inline: 0; z-index: 60; background: rgba(18,21,30,0.96); backdrop-filter: blur(10px); border-top: 1px solid var(--border); padding: 10px 16px; align-items: center; justify-content: space-between; gap: 12px; }
+    .mobile-sticky-info { display: flex; align-items: center; gap: 10px; }
+    .mobile-sticky-info img { width: 34px; height: 34px; border-radius: 8px; }
+    .mobile-sticky a { background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 9px 16px; border-radius: 10px; font-size: 0.9rem; white-space: nowrap; }
+    @media (max-width: 820px) { .qr-box { display: none; } .mobile-sticky { display: flex; } body { padding-bottom: 64px; } }
   </style>
 </head>
 <body>
@@ -152,7 +170,17 @@
         <div class="hero-meta">
           <span class="safe-pill" data-i18n="safe_badge">&#10003; Verified Safe APK</span>
           <span class="dl-pill" id="dl-counter">Total Downloads: ...</span>
-          <span data-i18n="hero_meta">Android 7.0+ • Free</span>
+                    <span data-i18n="hero_meta">Android 7.0+ • Free</span>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px;">
+          <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://ezappsofficial-bit.github.io/EZTube/" alt="QR Code" />
+            <div class="qr-text">
+              <strong>Scan to Download</strong>
+              <span>Open directly on your Android phone</span>
+            </div>
+          </div>
+          <button onclick="shareApp()" class="btn-secondary" style="padding:12px 18px; font-size:0.92rem; margin-top:16px;">&#128279; Share App</button>
         </div>
       </div>
 
@@ -288,6 +316,14 @@
         </div>
       </div>
     </section>
+
+        <div class="support-box">
+      <div>
+        <h3>Need Help or Have a Suggestion?</h3>
+        <p>Contact our support team directly for assistance or feedback on upcoming releases.</p>
+      </div>
+      <a href="mailto:eztube.app@outlook.com" class="btn-primary" style="padding:12px 22px; font-size:0.95rem;">&#9993; eztube.app@outlook.com</a>
+    </div>
 
     <section class="privacy-section" id="privacy-policy">
       <div class="privacy-box">
@@ -554,5 +590,27 @@
       })
       .catch(() => {});
   </script>
+  <div class="mobile-sticky">
+    <div class="mobile-sticky-info">
+      <img src="logo.png" alt="EZTube" />
+      <div><strong>EZTube</strong><span style="font-size:0.78rem; color:#4ade80;">Ad-Free • 4K &amp; MP3</span></div>
+    </div>
+    <a id="sticky-dl" href="https://github.com/ezappsofficial-bit/EZTube/releases/latest">Download APK</a>
+  </div>
+  <script>
+    function shareApp() {
+      const url = 'https://ezappsofficial-bit.github.io/EZTube/';
+      if (navigator.share) { navigator.share({ title: 'EZTube for Android', url }); }
+      else { navigator.clipboard.writeText(url); alert('Link copied: ' + url); }
+    }
+    const syncDl = setInterval(() => {
+      const h = document.getElementById('hero-dl');
+      if (h && h.href.includes('/releases/download/')) {
+        document.getElementById('sticky-dl').href = h.href;
+        clearInterval(syncDl);
+      }
+    }, 500);
+  </script>
 </body>
 </html>
+
