@@ -286,14 +286,14 @@
           <tr>
             <th data-i18n="cmp_feat">Feature</th>
             <th style="text-align:center;" data-i18n="cmp_std">Standard Apps</th>
-            <th style="text-align:center; color:var(--accent);">EZTube</th>
+            <th style="text-align:center; color:var(--accent);" data-i18n="cmp_ez">EZTube (100% Free)</th>
           </tr>
         </thead>
         <tbody>
           <tr><td data-i18n="cmp_r1">Ad-Free Video Playback</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
           <tr><td data-i18n="cmp_r2">Background Play (Screen Off)</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
           <tr><td data-i18n="cmp_r3">Direct 4K / 1080p &amp; MP3 Downloads</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
-          <tr><td data-i18n="cmp_r4">Floating Picture-in-Picture Player</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
+          <tr><td data-i18n="cmp_r4">Floating Picture-in-Picture Player</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr><tr><td data-i18n="cmp_r5">No Paid Monthly Subscription</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
         </tbody>
       </table>
     </section>
@@ -657,7 +657,7 @@
       const extraI18n = {
       en: {
         free_badge: '&#9733; 100% Free', cmp_heading: 'Why Choose EZTube?', cmp_sub: 'Compare the difference between standard video apps and the EZTube experience.',
-        cmp_feat: 'Feature', cmp_std: 'Standard Apps', cmp_r1: 'Ad-Free Video Playback', cmp_r2: 'Background Play (Screen Off)',
+        cmp_feat: 'Feature', cmp_std: 'Free Video Apps', cmp_ez: 'EZTube (100% Free)', cmp_r5: 'No Paid Monthly Subscription', cmp_r1: 'Ad-Free Video Playback', cmp_r2: 'Background Play (Screen Off)',
         cmp_r3: 'Direct 4K / 1080p & MP3 Downloads', cmp_r4: 'Floating Picture-in-Picture Player',
         priv_li4: '<strong>Advertising:</strong> To keep EZTube 100% free, future versions may display non-intrusive ads via trusted third-party ad networks.',
         apps_title: 'More by EZApps', apps_desc: 'Discover our growing ecosystem of smart Android utilities, including <strong>MotorCare</strong> vehicle maintenance manager and upcoming apps.',
@@ -665,7 +665,7 @@
       },
       ar: {
         free_badge: '&#9733; مجاني 100%', cmp_heading: 'لماذا تختار EZTube؟', cmp_sub: 'قارن الفرق بين تطبيقات الفيديو التقليدية وتجربة EZTube المتكاملة.',
-        cmp_feat: 'الميزة', cmp_std: 'التطبيقات العادية', cmp_r1: 'مشاهدة بدون إعلانات أثناء الفيديو', cmp_r2: 'التشغيل في الخلفية والشاشة مقفولة',
+        cmp_feat: 'الميزة', cmp_std: 'النسخة المجانية العادية', cmp_ez: 'EZTube (مجاني 100%)', cmp_r5: 'بدون اشتراك شهري مدفوع', cmp_r1: 'مشاهدة بدون إعلانات أثناء الفيديو', cmp_r2: 'التشغيل في الخلفية والشاشة مقفولة',
         cmp_r3: 'تحميل مباشر بجودة 4K / 1080p و MP3', cmp_r4: 'مشغل نافذة عائمة مصغرة (PiP)',
         priv_li4: '<strong>الإعلانات:</strong> للحفاظ على التطبيق مجانياً بالكامل، قد تعرض الإصدارات القادمة إعلانات غير متطفلة عبر شبكات إعلانية موثوقة.',
         apps_title: 'المزيد من تطبيقات EZApps', apps_desc: 'اكتشف مجموعتنا المتنامية من تطبيقات الأندرويد الذكية، بما في ذلك تطبيق <strong>MotorCare</strong> لإدارة وصيانة السيارات وتطبيقاتنا القادمة.',
@@ -673,7 +673,7 @@
       },
       fr: {
         free_badge: '&#9733; 100 % Gratuit', cmp_heading: 'Pourquoi choisir EZTube ?', cmp_sub: 'Comparez la différence entre les applications classiques et EZTube.',
-        cmp_feat: 'Fonctionnalité', cmp_std: 'Apps Standard', cmp_r1: 'Lecture vidéo sans publicité', cmp_r2: 'Lecture en arrière-plan (écran éteint)',
+        cmp_feat: 'Fonctionnalité', cmp_std: 'Apps Vidéo Gratuites', cmp_ez: 'EZTube (100 % Gratuit)', cmp_r5: 'Sans abonnement mensuel payant', cmp_r1: 'Lecture vidéo sans publicité', cmp_r2: 'Lecture en arrière-plan (écran éteint)',
         cmp_r3: 'Téléchargements directs 4K / 1080p & MP3', cmp_r4: 'Lecteur flottant Picture-in-Picture',
         priv_li4: '<strong>Publicité :</strong> Pour garder EZTube 100 % gratuit, les futures versions peuvent afficher des annonces non intrusives.',
         apps_title: 'Plus par EZApps', apps_desc: 'Découvrez nos applications Android intelligentes, dont <strong>MotorCare</strong> pour l’entretien automobile.',
@@ -681,7 +681,7 @@
       },
       de: {
         free_badge: '&#9733; 100 % Kostenlos', cmp_heading: 'Warum EZTube wählen?', cmp_sub: 'Vergleichen Sie herkömmliche Video-Apps mit dem EZTube-Erlebnis.',
-        cmp_feat: 'Funktion', cmp_std: 'Standard-Apps', cmp_r1: 'Werbefreie Videowiedergabe', cmp_r2: 'Hintergrundwiedergabe (Display aus)',
+        cmp_feat: 'Funktion', cmp_std: 'Kostenlose Video-Apps', cmp_ez: 'EZTube (100 % Kostenlos)', cmp_r5: 'Kein kostenpflichtiges Monatsabo', cmp_r1: 'Werbefreie Videowiedergabe', cmp_r2: 'Hintergrundwiedergabe (Display aus)',
         cmp_r3: 'Direkte 4K / 1080p & MP3 Downloads', cmp_r4: 'Schwebender Bild-in-Bild-Player',
         priv_li4: '<strong>Werbung:</strong> Um EZTube 100 % kostenlos zu halten, können zukünftige Versionen unaufdringliche Werbung anzeigen.',
         apps_title: 'Mehr von EZApps', apps_desc: 'Entdecken Sie unsere smarten Android-Apps, darunter <strong>MotorCare</strong> für Fahrzeugwartung.',
@@ -689,7 +689,7 @@
       },
       es: {
         free_badge: '&#9733; 100 % Gratis', cmp_heading: '¿Por qué elegir EZTube?', cmp_sub: 'Compara la diferencia entre las apps tradicionales y la experiencia EZTube.',
-        cmp_feat: 'Característica', cmp_std: 'Apps Estándar', cmp_r1: 'Reproducción sin anuncios', cmp_r2: 'Segundo plano (pantalla apagada)',
+        cmp_feat: 'Característica', cmp_std: 'Apps de Video Gratis', cmp_ez: 'EZTube (100 % Gratis)', cmp_r5: 'Sin suscripción mensual de pago', cmp_r1: 'Reproducción sin anuncios', cmp_r2: 'Segundo plano (pantalla apagada)',
         cmp_r3: 'Descargas directas 4K / 1080p y MP3', cmp_r4: 'Reproductor flotante Picture-in-Picture',
         priv_li4: '<strong>Publicidad:</strong> Para mantener EZTube 100 % gratis, futuras versiones pueden mostrar anuncios no intrusivos.',
         apps_title: 'Más de EZApps', apps_desc: 'Descubre nuestras utilidades inteligentes para Android, incluido <strong>MotorCare</strong> para el mantenimiento de vehículos.',
@@ -723,5 +723,6 @@
   </script>
 </body>
 </html>
+
 
 
