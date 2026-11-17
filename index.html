@@ -117,7 +117,7 @@
       .nav-links a:not(.nav-btn) { display: none; }
     }
       .qr-box { display: inline-flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--border); padding: 10px 14px; border-radius: 14px; margin-top: 16px; }
-    .qr-box img { width: 60px; height: 60px; border-radius: 8px; background: #fff; padding: 3px; }
+    .qr-box img { width: 85px; height: 85px; border-radius: 8px; background: #fff; padding: 3px; }
     .qr-text strong { display: block; font-size: 0.88rem; color: var(--text); }
     .qr-text span { font-size: 0.8rem; color: var(--muted); }
     .support-box { background: linear-gradient(135deg, #171b26 0%, #1e1620 100%); border: 1px solid rgba(255,30,39,0.35); border-radius: 18px; padding: 26px 30px; margin: 25px 0 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
@@ -128,6 +128,18 @@
     .mobile-sticky-info img { width: 34px; height: 34px; border-radius: 8px; }
     .mobile-sticky a { background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 9px 16px; border-radius: 10px; font-size: 0.9rem; white-space: nowrap; }
     @media (max-width: 820px) { .qr-box { display: none; } .mobile-sticky { display: flex; } body { padding-bottom: 64px; } }
+      .free-pill { background: rgba(255, 30, 39, 0.16); border: 1px solid rgba(255, 30, 39, 0.45); color: #ff6b72; padding: 3px 11px; border-radius: 99px; font-weight: 700; font-size: 12.5px; }
+    .spec-pill { background: rgba(148, 163, 184, 0.12); border: 1px solid var(--border); color: var(--text); padding: 3px 11px; border-radius: 99px; font-weight: 500; font-size: 12.5px; }
+    .comp-sec { padding: 45px 0 30px; }
+    .comp-table { width: 100%; max-width: 820px; margin: 0 auto; border-collapse: collapse; background: var(--card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .comp-table th, .comp-table td { padding: 15px 20px; text-align: start; border-bottom: 1px solid var(--border); font-size: 0.96rem; }
+    .comp-table th { background: var(--surface); font-weight: 700; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .chk-yes { color: #4ade80; font-weight: 700; text-align: center !important; }
+    .chk-no { color: #f87171; font-weight: 700; text-align: center !important; }
+    .apps-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 26px 30px; margin: 20px 0 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .apps-box h3 { font-size: 1.18rem; margin-bottom: 4px; }
+    .apps-box p { color: var(--muted); font-size: 0.92rem; }
   </style>
 </head>
 <body>
@@ -168,9 +180,10 @@
           <a class="btn-secondary" href="#screenshots" data-i18n="hero_explore">Explore App</a>
         </div>
         <div class="hero-meta">
+          <span class="free-pill" data-i18n="free_badge">&#9733; 100% Free</span>
           <span class="safe-pill" data-i18n="safe_badge">&#10003; Verified Safe APK</span>
           <span class="dl-pill" id="dl-counter">Total Downloads: ...</span>
-                    <span data-i18n="hero_meta">Android 7.0+ • Free</span>
+          <span class="spec-pill" id="apk-specs">Android 7.0+</span>
         </div>
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px;">
           <div class="qr-box">
@@ -263,6 +276,28 @@
   </section>
 
   <div class="container">
+        <section class="comp-sec">
+      <div class="section-head">
+        <h2 data-i18n="cmp_heading">Why Choose EZTube?</h2>
+        <p data-i18n="cmp_sub">Compare the difference between standard video apps and the EZTube experience.</p>
+      </div>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th data-i18n="cmp_feat">Feature</th>
+            <th style="text-align:center;" data-i18n="cmp_std">Standard Apps</th>
+            <th style="text-align:center; color:var(--accent);">EZTube</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-i18n="cmp_r1">Ad-Free Video Playback</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
+          <tr><td data-i18n="cmp_r2">Background Play (Screen Off)</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
+          <tr><td data-i18n="cmp_r3">Direct 4K / 1080p &amp; MP3 Downloads</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
+          <tr><td data-i18n="cmp_r4">Floating Picture-in-Picture Player</td><td class="chk-no">&#10005;</td><td class="chk-yes">&#10003;</td></tr>
+        </tbody>
+      </table>
+    </section>
+
     <section class="install-sec" id="install">
       <div class="section-head">
         <h2 data-i18n="inst_heading">How to Install in 30 Seconds</h2>
@@ -317,7 +352,15 @@
       </div>
     </section>
 
-        <div class="support-box">
+            <div class="apps-box">
+      <div>
+        <h3 data-i18n="apps_title">More by EZApps</h3>
+        <p data-i18n="apps_desc">Discover our growing ecosystem of smart Android utilities, including <strong>MotorCare</strong> vehicle maintenance manager and upcoming apps.</p>
+      </div>
+      <span class="spec-pill" data-i18n="apps_badge">EZApps Official Portfolio</span>
+    </div>
+
+    <div class="support-box">
       <div>
         <h3>Need Help or Have a Suggestion?</h3>
         <p>Contact our support team directly for assistance or feedback on upcoming releases.</p>
@@ -334,6 +377,7 @@
           <li data-i18n="priv_li1"><strong>Local Storage Only:</strong> All downloaded media files, playlists, and app preferences remain strictly on your Android device.</li>
           <li data-i18n="priv_li2"><strong>Permissions:</strong> Storage and Media permissions are used solely to save and play your offline files.</li>
           <li data-i18n="priv_li3"><strong>Support Contact:</strong> For any questions or assistance, contact us at <strong>eztube.app@outlook.com</strong>.</li>
+          <li data-i18n="priv_li4"><strong>Advertising:</strong> To keep EZTube 100% free, future versions may display non-intrusive ads via trusted third-party ad networks.</li>
         </ul>
       </div>
     </section>
@@ -610,7 +654,74 @@
         clearInterval(syncDl);
       }
     }, 500);
+      const extraI18n = {
+      en: {
+        free_badge: '&#9733; 100% Free', cmp_heading: 'Why Choose EZTube?', cmp_sub: 'Compare the difference between standard video apps and the EZTube experience.',
+        cmp_feat: 'Feature', cmp_std: 'Standard Apps', cmp_r1: 'Ad-Free Video Playback', cmp_r2: 'Background Play (Screen Off)',
+        cmp_r3: 'Direct 4K / 1080p & MP3 Downloads', cmp_r4: 'Floating Picture-in-Picture Player',
+        priv_li4: '<strong>Advertising:</strong> To keep EZTube 100% free, future versions may display non-intrusive ads via trusted third-party ad networks.',
+        apps_title: 'More by EZApps', apps_desc: 'Discover our growing ecosystem of smart Android utilities, including <strong>MotorCare</strong> vehicle maintenance manager and upcoming apps.',
+        apps_badge: 'EZApps Official Portfolio', qr_t: 'Scan to Download', qr_d: 'Open directly on your Android phone', share_btn: '&#128279; Share App'
+      },
+      ar: {
+        free_badge: '&#9733; مجاني 100%', cmp_heading: 'لماذا تختار EZTube؟', cmp_sub: 'قارن الفرق بين تطبيقات الفيديو التقليدية وتجربة EZTube المتكاملة.',
+        cmp_feat: 'الميزة', cmp_std: 'التطبيقات العادية', cmp_r1: 'مشاهدة بدون إعلانات أثناء الفيديو', cmp_r2: 'التشغيل في الخلفية والشاشة مقفولة',
+        cmp_r3: 'تحميل مباشر بجودة 4K / 1080p و MP3', cmp_r4: 'مشغل نافذة عائمة مصغرة (PiP)',
+        priv_li4: '<strong>الإعلانات:</strong> للحفاظ على التطبيق مجانياً بالكامل، قد تعرض الإصدارات القادمة إعلانات غير متطفلة عبر شبكات إعلانية موثوقة.',
+        apps_title: 'المزيد من تطبيقات EZApps', apps_desc: 'اكتشف مجموعتنا المتنامية من تطبيقات الأندرويد الذكية، بما في ذلك تطبيق <strong>MotorCare</strong> لإدارة وصيانة السيارات وتطبيقاتنا القادمة.',
+        apps_badge: 'مجموعة تطبيقات EZApps', qr_t: 'امسح الكود للتحميل', qr_d: 'افتح الصفحة مباشرة على هاتفك الأندرويد', share_btn: '&#128279; مشاركة التطبيق'
+      },
+      fr: {
+        free_badge: '&#9733; 100 % Gratuit', cmp_heading: 'Pourquoi choisir EZTube ?', cmp_sub: 'Comparez la différence entre les applications classiques et EZTube.',
+        cmp_feat: 'Fonctionnalité', cmp_std: 'Apps Standard', cmp_r1: 'Lecture vidéo sans publicité', cmp_r2: 'Lecture en arrière-plan (écran éteint)',
+        cmp_r3: 'Téléchargements directs 4K / 1080p & MP3', cmp_r4: 'Lecteur flottant Picture-in-Picture',
+        priv_li4: '<strong>Publicité :</strong> Pour garder EZTube 100 % gratuit, les futures versions peuvent afficher des annonces non intrusives.',
+        apps_title: 'Plus par EZApps', apps_desc: 'Découvrez nos applications Android intelligentes, dont <strong>MotorCare</strong> pour l’entretien automobile.',
+        apps_badge: 'Catalogue Officiel EZApps', qr_t: 'Scanner pour télécharger', qr_d: 'Ouvrir directement sur votre téléphone Android', share_btn: '&#128279; Partager'
+      },
+      de: {
+        free_badge: '&#9733; 100 % Kostenlos', cmp_heading: 'Warum EZTube wählen?', cmp_sub: 'Vergleichen Sie herkömmliche Video-Apps mit dem EZTube-Erlebnis.',
+        cmp_feat: 'Funktion', cmp_std: 'Standard-Apps', cmp_r1: 'Werbefreie Videowiedergabe', cmp_r2: 'Hintergrundwiedergabe (Display aus)',
+        cmp_r3: 'Direkte 4K / 1080p & MP3 Downloads', cmp_r4: 'Schwebender Bild-in-Bild-Player',
+        priv_li4: '<strong>Werbung:</strong> Um EZTube 100 % kostenlos zu halten, können zukünftige Versionen unaufdringliche Werbung anzeigen.',
+        apps_title: 'Mehr von EZApps', apps_desc: 'Entdecken Sie unsere smarten Android-Apps, darunter <strong>MotorCare</strong> für Fahrzeugwartung.',
+        apps_badge: 'EZApps Portfolio', qr_t: 'Scannen zum Download', qr_d: 'Direkt auf Ihrem Android-Handy öffnen', share_btn: '&#128279; App teilen'
+      },
+      es: {
+        free_badge: '&#9733; 100 % Gratis', cmp_heading: '¿Por qué elegir EZTube?', cmp_sub: 'Compara la diferencia entre las apps tradicionales y la experiencia EZTube.',
+        cmp_feat: 'Característica', cmp_std: 'Apps Estándar', cmp_r1: 'Reproducción sin anuncios', cmp_r2: 'Segundo plano (pantalla apagada)',
+        cmp_r3: 'Descargas directas 4K / 1080p y MP3', cmp_r4: 'Reproductor flotante Picture-in-Picture',
+        priv_li4: '<strong>Publicidad:</strong> Para mantener EZTube 100 % gratis, futuras versiones pueden mostrar anuncios no intrusivos.',
+        apps_title: 'Más de EZApps', apps_desc: 'Descubre nuestras utilidades inteligentes para Android, incluido <strong>MotorCare</strong> para el mantenimiento de vehículos.',
+        apps_badge: 'Portafolio Oficial EZApps', qr_t: 'Escanea para descargar', qr_d: 'Abre directamente en tu teléfono Android', share_btn: '&#128279; Compartir'
+      }
+    };
+    Object.keys(extraI18n).forEach(l => Object.assign(translations[l], extraI18n[l]));
+
+    const origApply = applyLanguage;
+    applyLanguage = function(lang) {
+      origApply(lang);
+      const t = translations[currentLang] || translations.en;
+      const qrt = document.querySelector('.qr-text strong');
+      const qrd = document.querySelector('.qr-text span');
+      const shb = document.querySelector('button[onclick="shareApp()"]');
+      if (qrt) qrt.textContent = t.qr_t;
+      if (qrd) qrd.textContent = t.qr_d;
+      if (shb) shb.innerHTML = t.share_btn;
+    };
+    applyLanguage(currentLang);
+
+    fetch('https://api.github.com/repos/ezappsofficial-bit/EZTube/releases/latest')
+      .then(r => r.json())
+      .then(rel => {
+        if (rel && rel.assets && rel.assets[0]) {
+          const mb = (rel.assets[0].size / (1024 * 1024)).toFixed(1);
+          const dt = new Date(rel.published_at).toLocaleDateString();
+          document.getElementById('apk-specs').textContent = Android 7.0+ •  MB • ;
+        }
+      }).catch(() => {});
   </script>
 </body>
 </html>
+
 
