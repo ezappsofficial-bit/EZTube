@@ -721,8 +721,87 @@
         }
       }).catch(() => {});
   </script>
+  <script>
+    (function() {
+      const fullExtra = {
+        en: {
+          free_badge: '&#9733; 100% Free', cmp_heading: 'Why Choose EZTube?', cmp_sub: 'Compare the difference between free video apps and the EZTube experience.',
+          cmp_feat: 'Feature', cmp_std: 'Free Video Apps', cmp_ez: 'EZTube (100% Free)',
+          cmp_r1: 'Ad-Free Video Playback', cmp_r2: 'Background Play (Screen Off)',
+          cmp_r3: 'Direct 4K / 1080p & MP3 Downloads', cmp_r4: 'Floating Picture-in-Picture Player', cmp_r5: 'No Paid Monthly Subscription',
+          priv_li4: '<strong>Advertising:</strong> To keep EZTube 100% free, future versions may display non-intrusive ads via trusted third-party ad networks.',
+          apps_title: 'More by EZApps', apps_desc: 'Discover our growing ecosystem of smart Android utilities, including <strong>MotorCare</strong> vehicle maintenance manager and upcoming apps.',
+          apps_badge: 'EZApps Official Portfolio', qr_t: 'Scan to Download', qr_d: 'Open directly on your Android phone', share_btn: '&#128279; Share App',
+          sup_t: 'Need Help or Have a Suggestion?', sup_d: 'Contact our support team directly for assistance or feedback on upcoming releases.'
+        },
+        ar: {
+          free_badge: '&#9733; مجاني 100%', cmp_heading: 'لماذا تختار EZTube؟', cmp_sub: 'قارن الفرق بين تطبيقات الفيديو المجانية العادية وتجربة EZTube المتكاملة.',
+          cmp_feat: 'الميزة', cmp_std: 'النسخة المجانية العادية', cmp_ez: 'EZTube (مجاني 100%)',
+          cmp_r1: 'مشاهدة بدون إعلانات أثناء الفيديو', cmp_r2: 'التشغيل في الخلفية والشاشة مقفولة',
+          cmp_r3: 'تحميل مباشر بجودة 4K / 1080p و MP3', cmp_r4: 'مشغل نافذة عائمة مصغرة (PiP)', cmp_r5: 'بدون اشتراك شهري مدفوع',
+          priv_li4: '<strong>الإعلانات:</strong> للحفاظ على التطبيق مجانياً بالكامل، قد تعرض الإصدارات القادمة إعلانات غير متطفلة عبر شبكات إعلانية موثوقة.',
+          apps_title: 'المزيد من تطبيقات EZApps', apps_desc: 'اكتشف مجموعتنا المتنامية من تطبيقات الأندرويد الذكية، بما في ذلك تطبيق <strong>MotorCare</strong> لإدارة وصيانة السيارات وتطبيقاتنا القادمة.',
+          apps_badge: 'مجموعة تطبيقات EZApps', qr_t: 'امسح الكود للتحميل', qr_d: 'افتح الصفحة مباشرة على هاتفك الأندرويد', share_btn: '&#128279; مشاركة التطبيق',
+          sup_t: 'هل تحتاج مساعدة أو لديك اقتراح؟', sup_d: 'تواصل مع فريق الدعم مباشرة للمساعدة أو إرسال ملاحظاتك للإصدارات القادمة.'
+        },
+        fr: {
+          free_badge: '&#9733; 100 % Gratuit', cmp_heading: 'Pourquoi choisir EZTube ?', cmp_sub: 'Comparez la différence entre les applications vidéo gratuites et EZTube.',
+          cmp_feat: 'Fonctionnalité', cmp_std: 'Apps Vidéo Gratuites', cmp_ez: 'EZTube (100 % Gratuit)',
+          cmp_r1: 'Lecture vidéo sans publicité', cmp_r2: 'Lecture en arrière-plan (écran éteint)',
+          cmp_r3: 'Téléchargements directs 4K / 1080p & MP3', cmp_r4: 'Lecteur flottant Picture-in-Picture', cmp_r5: 'Sans abonnement mensuel payant',
+          priv_li4: '<strong>Publicité :</strong> Pour garder EZTube 100 % gratuit, les futures versions peuvent afficher des annonces non intrusives.',
+          apps_title: 'Plus par EZApps', apps_desc: 'Découvrez nos applications Android intelligentes, dont <strong>MotorCare</strong> pour l’entretien automobile.',
+          apps_badge: 'Catalogue Officiel EZApps', qr_t: 'Scanner pour télécharger', qr_d: 'Ouvrir directement sur votre téléphone Android', share_btn: '&#128279; Partager',
+          sup_t: 'Besoin d’aide ou une suggestion ?', sup_d: 'Contactez notre équipe d’assistance directement pour toute question.'
+        },
+        de: {
+          free_badge: '&#9733; 100 % Kostenlos', cmp_heading: 'Warum EZTube wählen?', cmp_sub: 'Vergleichen Sie kostenlose Video-Apps mit dem EZTube-Erlebnis.',
+          cmp_feat: 'Funktion', cmp_std: 'Kostenlose Video-Apps', cmp_ez: 'EZTube (100 % Kostenlos)',
+          cmp_r1: 'Werbefreie Videowiedergabe', cmp_r2: 'Hintergrundwiedergabe (Display aus)',
+          cmp_r3: 'Direkte 4K / 1080p & MP3 Downloads', cmp_r4: 'Schwebender Bild-in-Bild-Player', cmp_r5: 'Kein kostenpflichtiges Monatsabo',
+          priv_li4: '<strong>Werbung:</strong> Um EZTube 100 % kostenlos zu halten, können zukünftige Versionen unaufdringliche Werbung anzeigen.',
+          apps_title: 'Mehr von EZApps', apps_desc: 'Entdecken Sie unsere smarten Android-Apps, darunter <strong>MotorCare</strong> für Fahrzeugwartung.',
+          apps_badge: 'EZApps Portfolio', qr_t: 'Scannen zum Download', qr_d: 'Direkt auf Ihrem Android-Handy öffnen', share_btn: '&#128279; App teilen',
+          sup_t: 'Hilfe benötigt oder Vorschläge?', sup_d: 'Kontaktieren Sie unser Support-Team direkt bei Fragen oder Feedback.'
+        },
+        es: {
+          free_badge: '&#9733; 100 % Gratis', cmp_heading: '¿Por qué elegir EZTube?', cmp_sub: 'Compara la diferencia entre las apps de video gratuitas y EZTube.',
+          cmp_feat: 'Característica', cmp_std: 'Apps de Video Gratis', cmp_ez: 'EZTube (100 % Gratis)',
+          cmp_r1: 'Reproducción sin anuncios', cmp_r2: 'Segundo plano (pantalla apagada)',
+          cmp_r3: 'Descargas directas 4K / 1080p y MP3', cmp_r4: 'Reproductor flotante Picture-in-Picture', cmp_r5: 'Sin suscripción mensual de pago',
+          priv_li4: '<strong>Publicidad:</strong> Para mantener EZTube 100 % gratis, futuras versiones pueden mostrar anuncios no intrusivos.',
+          apps_title: 'Más de EZApps', apps_desc: 'Descubre nuestras utilidades inteligentes para Android, incluido <strong>MotorCare</strong> para el mantenimiento de vehículos.',
+          apps_badge: 'Portafolio Oficial EZApps', qr_t: 'Escanea para descargar', qr_d: 'Abre directamente en tu teléfono Android', share_btn: '&#128279; Compartir',
+          sup_t: '¿Necesitas ayuda o tienes sugerencias?', sup_d: 'Contacta directamente con nuestro equipo de soporte para asistencia.'
+        }
+      };
+
+      Object.keys(fullExtra).forEach(lang => {
+        if (translations[lang]) Object.assign(translations[lang], fullExtra[lang]);
+      });
+
+      const prevApply = applyLanguage;
+      applyLanguage = function(lang) {
+        prevApply(lang);
+        const t = translations[currentLang] || translations.en;
+        const qrt = document.querySelector('.qr-text strong');
+        const qrd = document.querySelector('.qr-text span');
+        const shb = document.querySelector('button[onclick="shareApp()"]');
+        const supt = document.querySelector('.support-box h3');
+        const supd = document.querySelector('.support-box p');
+        if (qrt) qrt.textContent = t.qr_t;
+        if (qrd) qrd.textContent = t.qr_d;
+        if (shb) shb.innerHTML = t.share_btn;
+        if (supt) supt.textContent = t.sup_t;
+        if (supd) supd.textContent = t.sup_d;
+      };
+
+      applyLanguage(document.getElementById('lang-switcher').value || currentLang);
+    })();
+  </script>
 </body>
 </html>
+
 
 
 
