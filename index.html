@@ -856,6 +856,39 @@
       applyLanguage(document.getElementById('lang-switcher').value || currentLang);
     })();
   </script>
+<script>
+  (function() {
+    const STORAGE_KEY = 'eztube_saved_lang';
+
+    function applySavedLang() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const sel = document.querySelector('select');
+      if (saved && sel && sel.value !== saved) {
+        sel.value = saved;
+        sel.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      const raw = (saved || (sel ? sel.value : '') || document.documentElement.lang || 'en').toLowerCase();
+      const lang = ['ar', 'de', 'es'].find(l => raw.startsWith(l)) || 'en';
+      document.querySelectorAll('.svg-i18n').forEach(el => {
+        const txt = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+        if (txt) el.textContent = txt;
+      });
+    }
+
+    document.addEventListener('change', (e) => {
+      if (e.target && e.target.tagName === 'SELECT') {
+        localStorage.setItem(STORAGE_KEY, e.target.value);
+        setTimeout(applySavedLang, 30);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', applySavedLang);
+    window.addEventListener('load', () => {
+      applySavedLang();
+      setTimeout(applySavedLang, 150);
+    });
+  })();
+</script>
 </body>
 </html>
 
