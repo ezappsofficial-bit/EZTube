@@ -954,8 +954,13 @@
 <script id="ez-share-fb-fix">
   window.addEventListener('DOMContentLoaded', function() {
     var btns = Array.from(document.querySelectorAll('button, a'));
-    var shareBtn = btns.find(function(el) { return /Share App/i.test(el.textContent); });
+    var shareBtn = btns.find(function(el) { return /Share App|مشاركة/i.test(el.textContent); });
     if (shareBtn) {
+      shareBtn.style.margin = '0';
+      shareBtn.style.height = '40px';
+      shareBtn.style.display = 'inline-flex';
+      shareBtn.style.alignItems = 'center';
+      shareBtn.style.boxSizing = 'border-box';
       shareBtn.style.cursor = 'pointer';
       shareBtn.onclick = function(e) {
         e.preventDefault();
@@ -974,10 +979,10 @@
       if (!row) {
         row = document.createElement('div');
         row.id = 'ez-action-row';
-        row.style.cssText = 'display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;';
         shareBtn.parentNode.insertBefore(row, shareBtn);
         row.appendChild(shareBtn);
       }
+      row.style.cssText = 'display:inline-flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap;';
       var fb = document.getElementById('ez-hero-fb');
       if (!fb) {
         fb = document.createElement('a');
@@ -985,10 +990,12 @@
         fb.href = 'https://www.facebook.com/ezapps.eztube';
         fb.target = '_blank';
         fb.rel = 'noopener noreferrer';
-        fb.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Facebook';
+        row.appendChild(fb);
       }
-      fb.style.cssText = 'display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:rgba(24,119,242,0.12);border:1px solid rgba(24,119,242,0.35);color:#2563eb;text-decoration:none;font-weight:600;font-size:13.5px;white-space:nowrap;';
-      row.appendChild(fb);
+      var isAr = document.documentElement.dir === 'rtl' || document.documentElement.lang === 'ar';
+      var label = isAr ? 'تابعنا على فيسبوك' : 'Follow Us on Facebook';
+      fb.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> <span>' + label + '</span>';
+      fb.style.cssText = 'display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:10px;background:rgba(24,119,242,0.12);border:1px solid rgba(24,119,242,0.35);color:#2563eb;text-decoration:none;font-weight:600;font-size:13.5px;margin:0;white-space:nowrap;';
     }
   });
 </script>
