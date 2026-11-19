@@ -142,50 +142,6 @@
     .apps-box h3 { font-size: 1.18rem; margin-bottom: 4px; }
     .apps-box p { color: var(--muted); font-size: 0.92rem; }
   </style>
-<style id="ez-modern-ui">
-  :root { --ez-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-  body { transition: var(--ez-transition); background-image: radial-gradient(circle at 18% 12%, rgba(229, 9, 20, 0.14), transparent 38%), radial-gradient(circle at 85% 28%, rgba(36, 180, 126, 0.08), transparent 35%) !important; }
-  nav, header { backdrop-filter: blur(14px) !important; -webkit-backdrop-filter: blur(14px) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
-  a, button { transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important; }
-  a:hover, button:hover { transform: translateY(-2px); }
-  #ez-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: inherit; cursor: pointer; font-size: 17px; margin-inline-start: 10px; }
-  html.light-theme body { background-color: #f8fafc !important; color: #0f172a !important; background-image: radial-gradient(circle at 18% 12%, rgba(229, 9, 20, 0.08), transparent 40%), radial-gradient(circle at 85% 28%, rgba(36, 180, 126, 0.07), transparent 38%) !important; }
-  html.light-theme nav, html.light-theme header { background: rgba(255, 255, 255, 0.85) !important; border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important; color: #0f172a !important; }
-  html.light-theme h1, html.light-theme h2, html.light-theme h3, html.light-theme strong { color: #0f172a !important; }
-  html.light-theme p, html.light-theme span, html.light-theme small, html.light-theme li { color: #334155 !important; }
-  html.light-theme [class*="card"], html.light-theme [class*="box"], html.light-theme section > div > div { background-color: #ffffff !important; border-color: rgba(15, 23, 42, 0.1) !important; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06) !important; }
-  html.light-theme a[href*="github.com"], html.light-theme a[href*="releases"] { color: #ffffff !important; }
-  html.light-theme a[href*="github.com"] span, html.light-theme a[href*="releases"] span { color: #ffffff !important; }
-  html.light-theme a[href*="apkpure.com"] { background: #ffffff !important; box-shadow: 0 6px 18px rgba(36, 180, 126, 0.15) !important; }
-  html.light-theme a[href*="apkpure.com"] strong { color: #16a34a !important; }
-  html.light-theme #ez-theme-toggle { border-color: rgba(15, 23, 42, 0.15); background: #ffffff; color: #0f172a; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-</style>
-<script id="ez-modern-script">
-  (function(){
-    function applyTheme(t){
-      document.documentElement.classList.toggle('light-theme', t === 'light');
-      var btn = document.getElementById('ez-theme-toggle');
-      if(btn) btn.textContent = t === 'light' ? '🌙' : '☀️';
-    }
-    var saved = localStorage.getItem('ez_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    applyTheme(saved);
-    window.addEventListener('DOMContentLoaded', function(){
-      var nav = document.querySelector('nav') || document.querySelector('header');
-      if(nav && !document.getElementById('ez-theme-toggle')){
-        var btn = document.createElement('button');
-        btn.id = 'ez-theme-toggle';
-        btn.title = 'تبديل المظهر النهاري / الليلي';
-        btn.textContent = document.documentElement.classList.contains('light-theme') ? '🌙' : '☀️';
-        btn.onclick = function(){
-          var next = document.documentElement.classList.contains('light-theme') ? 'dark' : 'light';
-          localStorage.setItem('ez_theme', next);
-          applyTheme(next);
-        };
-        nav.appendChild(btn);
-      }
-    });
-  })();
-</script>
 </head>
 <body>
 
